@@ -7,6 +7,15 @@ class Hero{
     public: //Access Specifiers..
         int health ;
         
+
+    //Creating Copy constructor..
+
+    Hero(Hero &temp){
+        cout<<"Copy Constructor called"<<endl;;
+        this-> health = temp.health;
+        this-> level= temp.level;
+    }
+
     //Constructor Called. Works on both static and dynamic..
     
     Hero(){
