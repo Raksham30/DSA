@@ -15,6 +15,7 @@ class Student{
             this -> name = name ;               
             this -> rollno = rollno ;
         }
+        
     string getName(){
         return name;
     }
