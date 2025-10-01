@@ -28,6 +28,8 @@ class Human{
     }
 };
 
+//Public to Public inheritance.
+
 class Male: public Human{
     public:
         string name;
@@ -36,7 +38,29 @@ class Male: public Human{
     }
 };
 
+//Public to Protected Inheritance
+// class Male: protected Human{
+//     public:
+//         string name;
+//     void setName(string name){
+//         this->name = name;
+//     }b 
+// };
+//Public to Private Inheritance
+// class Male: private Human{
+//     public:
+//         string name;
+//     void setName(string name){
+//         this->name = name;
+//     }
+// };
+
+
+
 int main(){
+
+    Male m1 ;
+    cout<<m1.height<<endl; 
 
     // Student first ;
 
