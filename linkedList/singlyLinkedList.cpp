@@ -24,9 +24,46 @@ void InsertAthead(Node* &head , int d){
 
 }
 
-void InsertAtTail(){
+void InsertAtTail(Node * &tail, int d){
+    Node* temp = new Node(d);
+    tail->next = temp;
+    tail = temp;
+}
+
+void insertAtPosition(int position , int d , Node* &head ){
+    if(position == 1){
+        InsertAthead(head , d);
+        return ;
+    }
+    Node* temp = head ;
+
+    //create new Node 
+    Node* temp2 = new Node(d);
+
+    int cnt = 1 ;
+    while (cnt<position-1){
+        temp = temp->next ;
+        cnt++;
+    }
+
+    //If element if to be insert at last.
+    if(temp->next == NULL){
+        temp->next = temp2;
+        return ;
+    }
+
+
+    //Insert node in between 
+    temp2->next = temp->next;
+    temp->next = temp2;
+}
+
+
+void DeleteNode(int position , Node* &head){
     
 }
+
+
 
 
 void print(Node* &head){
@@ -45,14 +82,21 @@ int main(){
     // cout<<node1->data<<endl;
     // cout<<node1->next<<endl;
 
+    Node* tail = node1 ;
     Node* head = node1 ;
-    print(head) ;
 
-    InsertAthead(head ,12);
-    print(head) ;
+    // print(tail) ;
 
-    InsertAthead(head ,15);
+    // InsertAthead(head ,12);
+    InsertAtTail(tail , 12);
+    // print(head) ;
+
+    InsertAtTail(tail ,15);
     print(head);
+
+    insertAtPosition(4 , 66 , head);
+    print(head);
+
 
 
     return 0;
